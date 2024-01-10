@@ -249,7 +249,7 @@ func (g *generator) convertType(
 	goTyp, err := g.convertDefinition(
 		namePrefix, def, typ.Position, selectionSet, options, queryOptions)
 
-	if g.Config.OptionalOmitEmpty {
+	if g.Config.OptionalOmitEmpty && !typ.NonNull {
 		oe := true
 		options.Omitempty = &oe
 	}	
