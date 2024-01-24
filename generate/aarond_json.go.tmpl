@@ -1,0 +1,7 @@
+func (v *{{.GoName}}) MarshalJSON() ([]byte, error) {
+    return {{ref "github.com/aarondl/json.Marshal"}}(v)
+}
+
+func (v *{{.GoName}}) UnmarshalJSON(b []byte) error {
+    return {{ref "github.com/aarondl/json.Unmarshal"}}(b, v)
+}

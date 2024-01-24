@@ -463,7 +463,13 @@ func (typ *goStructType) WriteDefinition(w io.Writer, g *generator) error {
 		if err != nil {
 			return err
 		}
+	} else {
+		err = g.render("aarond_json.go.tmpl", w, typ)
+		if err != nil {
+			return err
+		}
 	}
+	
 	return nil
 }
 
