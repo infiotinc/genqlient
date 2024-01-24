@@ -17,12 +17,21 @@ type __getUserInput struct {
 
 // GetLogin returns __getUserInput.Login, and is useful for accessing the field via an interface.
 func (v *__getUserInput) GetLogin() string { return v.Login }
-func (v *__getUserInput) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v)
+func (v __getUserInput) MarshalJSON() ([]byte, error) {
+	type ___getUserInput __getUserInput
+	vv := ___getUserInput(v)
+	return json.Marshal(vv)
 }
 
 func (v *__getUserInput) UnmarshalJSON(b []byte) error {
-	return json.Unmarshal(b, v)
+	type ___getUserInput __getUserInput
+	var vd ___getUserInput
+	err := json.Unmarshal(b, &vd)
+	if err != nil {
+		return err
+	}
+	*v = __getUserInput(vd)
+	return nil
 }
 
 // getUserResponse is returned by getUser on success.
@@ -33,12 +42,21 @@ type getUserResponse struct {
 
 // GetUser returns getUserResponse.User, and is useful for accessing the field via an interface.
 func (v *getUserResponse) GetUser() getUserUser { return v.User }
-func (v *getUserResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v)
+func (v getUserResponse) MarshalJSON() ([]byte, error) {
+	type _getUserResponse getUserResponse
+	vv := _getUserResponse(v)
+	return json.Marshal(vv)
 }
 
 func (v *getUserResponse) UnmarshalJSON(b []byte) error {
-	return json.Unmarshal(b, v)
+	type _getUserResponse getUserResponse
+	var vd _getUserResponse
+	err := json.Unmarshal(b, &vd)
+	if err != nil {
+		return err
+	}
+	*v = getUserResponse(vd)
+	return nil
 }
 
 // getUserUser includes the requested fields of the GraphQL type User.
@@ -57,12 +75,21 @@ func (v *getUserUser) GetTheirName() string { return v.TheirName }
 
 // GetCreatedAt returns getUserUser.CreatedAt, and is useful for accessing the field via an interface.
 func (v *getUserUser) GetCreatedAt() time.Time { return v.CreatedAt }
-func (v *getUserUser) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v)
+func (v getUserUser) MarshalJSON() ([]byte, error) {
+	type _getUserUser getUserUser
+	vv := _getUserUser(v)
+	return json.Marshal(vv)
 }
 
 func (v *getUserUser) UnmarshalJSON(b []byte) error {
-	return json.Unmarshal(b, v)
+	type _getUserUser getUserUser
+	var vd _getUserUser
+	err := json.Unmarshal(b, &vd)
+	if err != nil {
+		return err
+	}
+	*v = getUserUser(vd)
+	return nil
 }
 
 // getViewerResponse is returned by getViewer on success.
@@ -73,12 +100,21 @@ type getViewerResponse struct {
 
 // GetViewer returns getViewerResponse.Viewer, and is useful for accessing the field via an interface.
 func (v *getViewerResponse) GetViewer() getViewerViewerUser { return v.Viewer }
-func (v *getViewerResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v)
+func (v getViewerResponse) MarshalJSON() ([]byte, error) {
+	type _getViewerResponse getViewerResponse
+	vv := _getViewerResponse(v)
+	return json.Marshal(vv)
 }
 
 func (v *getViewerResponse) UnmarshalJSON(b []byte) error {
-	return json.Unmarshal(b, v)
+	type _getViewerResponse getViewerResponse
+	var vd _getViewerResponse
+	err := json.Unmarshal(b, &vd)
+	if err != nil {
+		return err
+	}
+	*v = getViewerResponse(vd)
+	return nil
 }
 
 // getViewerViewerUser includes the requested fields of the GraphQL type User.
@@ -97,12 +133,21 @@ func (v *getViewerViewerUser) GetMyName() string { return v.MyName }
 
 // GetCreatedAt returns getViewerViewerUser.CreatedAt, and is useful for accessing the field via an interface.
 func (v *getViewerViewerUser) GetCreatedAt() time.Time { return v.CreatedAt }
-func (v *getViewerViewerUser) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v)
+func (v getViewerViewerUser) MarshalJSON() ([]byte, error) {
+	type _getViewerViewerUser getViewerViewerUser
+	vv := _getViewerViewerUser(v)
+	return json.Marshal(vv)
 }
 
 func (v *getViewerViewerUser) UnmarshalJSON(b []byte) error {
-	return json.Unmarshal(b, v)
+	type _getViewerViewerUser getViewerViewerUser
+	var vd _getViewerViewerUser
+	err := json.Unmarshal(b, &vd)
+	if err != nil {
+		return err
+	}
+	*v = getViewerViewerUser(vd)
+	return nil
 }
 
 // The query or mutation executed by getUser.
